@@ -1901,6 +1901,9 @@ link_socket_init_phase1(struct context *c, int mode)
         /* the OpenVPN server we will use the proxy to connect to */
         sock->proxy_dest_host = remote_host;
         sock->proxy_dest_port = remote_port;
+
+        msg(msglevel, "remote_host_port:%s_%d proxy_dest_host_port: %s_%d",
+            sock->remote_host,sock->remote_port,sock->proxy_dest_host,sock->proxy_dest_port);
     }
     /* or in Socks proxy mode? */
     else if (sock->socks_proxy)
